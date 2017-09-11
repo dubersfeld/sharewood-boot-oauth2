@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='allDirectors')">
+</head>    
+<body>
+
+	<div th:replace="fragments/main::display"></div>
+    
+	<h2 th:text="#{title.directorsList}"></h2>
+        
+    <table>
+        <tr>
+        	<th th:text="#{personal.id}"></th>
+            <th th:text="#{personal.firstName}"></th>
+            <th th:text="#{personal.lastName}"></th>
+            <th th:text="#{personal.birthDateDisplay}"></th>
+        </tr>
+        <tr th:each="director : ${directors}">
+        	<td th:text="${director.id}">id</td>
+            <td th:text="${director.firstName}">first name</td>
+            <td th:text="${director.lastName}">last name</td>
+            <td th:text="${director.birthDate}">birth date</td>
+        </tr>
+    </table>
+
+</body>
+</html>

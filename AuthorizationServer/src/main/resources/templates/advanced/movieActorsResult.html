@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='advancedmovieActorsResult')">
+</head>
+<body>
+
+   	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{advancedResult.movieActors}"></h1><br />
+	<p th:text="${title} + ' ' + ${#dates.format(releaseDate, 'dd-MM-yyyy')}"></p>
+
+	<br/><br/>
+
+	<div th:each="actor : ${actors}">
+		<p th:text="${actor.firstName} + ' ' + ${actor.lastName}"></p>
+                              
+    </div>
+
+	
+ 		
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='numberOfActors')">
+</head>
+<body>
+
+   	<div th:replace="fragments/main::displayPost"></div>
+	
+    <h1 th:text="#{directorQueries.numberOfDirectors} + ': ' + ${number}"></h1>
+   
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='createActorMovie')">
+</head>
+<body>
+
+   	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{advancedQueries.createActorMovie}"></h1><br /><br />
+	
+ 	<form action="#" th:action="@{createActorMovie}" 
+									th:object="${actorMovie}" method="post">     
+    <table>
+    <tr>
+        <td><span th:text="#{actor.id} + ': '"></span><input type="text" th:field="*{actorId}" /><span th:if="${#fields.hasErrors('actorId')}" th:errors="*{actorId}" th:class="errors"></span></td>
+    </tr>
+    <tr>
+        <td><span th:text="#{movie.id} + ': '"></span><input type="text" th:field="*{movieId}" /><span th:if="${#fields.hasErrors('movieId')}" th:errors="*{movieId}" th:class="errors"></span></td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+           <input type="submit" th:value="#{form.valid}" /> <input type="reset" th:value="#{form.reset}" />
+        </td>
+    </tr>
+    </table>
+	</form>
+
+  		
+ 		
+ 		
+ 		
+
+</body>
+</html>

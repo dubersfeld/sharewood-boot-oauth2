@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='movieActors')">
+</head>
+<body>
+
+   	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{advancedQueries.movieActors}"></h1><br /><br />
+	
+	<form action="#" th:action="@{movieActors}" th:object="${movieKey}" method="post">
+    	    
+    <table>
+    <tr>
+    <td><span th:text="#{movie.title}"></span><input type="text" th:field="*{title}" /><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" th:class="errors"></span></td>
+    </tr>
+	<tr>
+    <td><span th:text="#{movie.releaseDate}"></span> <input type="date" th:field="*{releaseDate}" /><span th:if="${#fields.hasErrors('releaseDate')}" th:errors="*{releaseDate}" th:class="errors"></span></td>
+      
+    </tr>
+    <tr>
+        <td colspan="2">
+           <input type="submit" th:value="#{form.valid}" /> <input type="reset" th:value="#{form.reset}" />
+        </td>
+    </tr>
+    </table>
+	</form>
+
+ 		
+
+</body>
+</html>

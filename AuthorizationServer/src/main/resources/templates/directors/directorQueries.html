@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='directorQueries')">
+</head>
+
+<body>
+ 
+    <div th:replace="fragments/main::display"></div>
+    
+    <a href="allDirectors" th:text="#{directorQueries.listAllDirectors}"></a><br />
+    
+    <a href="getDirector" th:text="#{directorQueries.getDirector}"></a><br />
+    
+    <a href="numberOfDirectors" th:text="#{directorQueries.numberOfDirectors}"></a><br />
+    
+    <a href="getDirectorByName" th:text="#{directorQueries.getDirectorByName}"></a><br />
+    
+    <div sec:authorize="hasAuthority('CREATE')">
+ 		<a href="createDirector" th:text="#{directorQueries.createDirector}"></a><br />
+    </div>
+      	
+    <div sec:authorize="hasAuthority('UPDATE')">
+    	<a href="updateDirector" th:text="#{directorQueries.updateDirector}"></a><br />
+  	</div>
+  	
+  	<div sec:authorize="hasAuthority('DELETE')">
+  		<a href="deleteDirector" th:text="#{directorQueries.deleteDirector}"></a><br />
+  	</div>
+  	
+  	<br /><br />
+    <div th:replace="fragments/footer::footer"></div>
+  		 	
+</body>
+</html>

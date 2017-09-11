@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/header::header(title='actorQueries')">
+</head>
+<body>
+	
+	<div th:replace="fragments/main::display"></div>
+		    
+    <a href="allActors" th:text="#{actorQueries.listAllActors}"></a><br />
+    
+    <a href="getActor" th:text="#{actorQueries.getActor}"></a><br />
+    
+    <a href="numberOfActors" th:text="#{actorQueries.numberOfActors}"></a><br />
+    
+    <a href="getActorByName" th:text="#{actorQueries.getActorByName}"></a><br />
+    
+    <div sec:authorize="hasAuthority('CREATE')">
+ 		<a href="createActor" th:text="#{actorQueries.createActor}"></a><br />  	
+    </div>
+    
+    <div sec:authorize="hasAuthority('UPDATE')">
+    	<a href="updateActor" th:text="#{actorQueries.updateActor}"></a><br />
+  	</div>
+  	
+  	<div sec:authorize="hasAuthority('DELETE')">
+  		<a href="deleteActor" th:text="#{actorQueries.deleteActor}"></a><br />
+  	</div>
+  	
+  	<br /><br />
+  		
+  	<div sec:authorize="hasAuthority('CREATE')">
+		<a href="createActorPhotoMulti" th:text="#{actorQueries.createActorPhoto}"></a><br/>
+	</div>
+	
+	<a href="listAllActorsWithPhotos" th:text="#{actorQueries.listAllActorsWithPhoto}"></a><br/>
+	
+	<a href="getAllPhotosByActor" th:text="#{actorQueries.getAllPhotosByActor}"></a><br/>
+	
+	<a href="getActorWithPhotoByName" th:text="#{actorQueries.getActorWithPhotoByName}"></a><br/>
+	
+	<div sec:authorize="hasAuthority('DELETE')">
+		<a href="deleteActorPhoto" th:text="#{actorQueries.deleteActorPhoto}"></a><br/>
+	</div>
+	
+	<br /><br />
+    <div th:replace="fragments/footer::footer"></div>
+
+</body>
+</html>

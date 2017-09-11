@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='createActor')">
+</head>
+
+<body>
+
+	<div th:replace="fragments/main::displayPost"></div>
+	
+    <h2 th:text="#{createActor.actorData}"></h2>
+        
+    <form action="#" th:action="@{createActor}" th:object="${actorForm}" method="post">
+    	<p><span th:text="#{personal.firstName} + ': '"></span><input type="text"  th:field="*{firstName}" /><span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:class="errors"></span></p>
+        <p><span th:text="#{personal.lastName} + ': '"></span><input type="text" th:field="*{lastName}" /><span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:class="errors"></span></p>
+        <p><span th:text="#{personal.birthDate} + ': '"></span><input type="date" th:field="*{birthDate}" /><span th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}" th:class="errors"></span></p>
+        <p><input type="submit" th:value="#{form.valid}" /> <input type="reset" th:value="#{form.reset}" /></p>
+	</form>
+
+</body>
+</html>

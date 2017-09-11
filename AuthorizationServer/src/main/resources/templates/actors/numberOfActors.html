@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='numberOfActors')">
+</head>
+<body>
+
+	<div th:replace="fragments/main::display"></div>
+	
+    <h1 th:text="#{actorQueries.numberOfActors} + ': ' + ${number}"></h1>
+     
+</body>
+</html>

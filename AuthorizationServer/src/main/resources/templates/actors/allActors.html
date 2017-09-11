@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='allActors')">
+</head>    
+<body>
+
+	<div th:replace="fragments/main::display"></div>
+	
+	<h2 th:text="#{title.actorsList}"></h2>
+
+    <table>
+        <tr>
+            <th th:text="#{personal.id}"></th>
+            <th th:text="#{personal.firstName}"></th>
+            <th th:text="#{personal.lastName}"></th>
+            <th th:text="#{personal.birthDateDisplay}"></th>
+        </tr>
+        <tr th:each="actor : ${actors}">
+            <td th:text="${actor.id}"></td>
+            <td th:text="${actor.firstName}"></td>
+            <td th:text="${actor.lastName}"></td>
+            <td th:text="${actor.birthDate}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

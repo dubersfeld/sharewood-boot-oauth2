@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='createPhotoMultipart')">
+</head>
+
+<body>
+
+	<h1 th:text="#{createPhoto}"></h1><br /><br />
+	
+	<div th:replace="fragments/main::displayPost"></div>
+	     
+    <form action="#" th:action="@{createPhotoMulti}" th:object="${photoMulti}" enctype="multipart/form-data" method="post">
+   		<p><span th:text="#{photoFile} + ': '"></span><input type="file" th:field="*{uploadedFile}" /><span th:if="${#fields.hasErrors('uploadedFile')}" th:errors="*{uploadedFile}" th:class="errors"></span></p>
+    	<p><span th:text="#{photoTitle} + ': '"></span><input type="text" th:field="*{title}" /><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" th:class="errors"></span></p>
+      	<p><span th:text="#{shared} + ': '"></span></p>           
+        <p><input type="radio" th:field="*{shared}" th:value="'false'" /><span th:text="#{no}"></span></p>
+        <p><input type="radio" th:field="*{shared}" th:value="'true'" /><span th:text="#{yes}"></span></p>
+    
+     
+    	<p><input type="submit" th:value="#{form.valid}" /> <input type="reset" th:value="#{form.reset}" /></p>
+</form>
+
+</body>
+</html>
+    
+    

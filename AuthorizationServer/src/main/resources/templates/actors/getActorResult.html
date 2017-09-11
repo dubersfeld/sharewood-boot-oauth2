@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='getActoResult')">
+</head>
+
+<body>
+
+	<div th:replace="fragments/main::displayPost"></div>
+		
+	<h1 th:text="#{actor.actorData}"></h1><br /><br />
+	
+    <p th:text="#{personal.id} + ': ' + ${actor.id}" />
+    <p th:text="#{personal.firstName} + ': ' + ${actor.firstName}" />
+    <p th:text="#{personal.lastName} + ': ' + ${actor.lastName}" />
+    <p th:text="#{personal.birthDateDisplay} + ': ' + ${#dates.format(actor.birthDate, 'dd-MM-yyyy')}" />
+</body>
+</html>

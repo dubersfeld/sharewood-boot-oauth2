@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+</head>
+<body>
+
+<div th:fragment="footer">
+
+    <div class="container" th:with="auths=${#authentication.principal.authorities}">
+
+        <footer>
+        <!-- this is footer -->
+      
+        <div sec:authorize="isAuthenticated()">    
+        	Logged user: <span sec:authentication="name"></span> |
+         	Roles: <span th:each="auth : ${auths}" th:text="${auth.authority}"></span>
+        </div>
+
+		<br /><br />
+  		<p>2017 dominique-ubersfeld.com</p>
+        </footer>
+    </div>
+    
+
+</div>
+
+</body>
+</html>

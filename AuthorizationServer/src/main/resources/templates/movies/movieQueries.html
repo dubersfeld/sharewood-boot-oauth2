@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='movieQueries')">
+</head>
+ <body>
+ 
+ 	<div th:replace="fragments/main::display"></div>
+ 	 
+ 	<a href="listAllMovies" th:text="#{movieQueries.listAllMovies}"></a><br/>
+	<a href="numberOfMovies" th:text="#{movieQueries.numberOfMovies}"></a><br/>
+	<a href="getMovie" th:text="#{movieQueries.getMovie}"></a><br/>
+	<a href="getSingleMovie" th:text="#{movieQueries.getSingleMovie}"></a><br/>
+	
+	<div sec:authorize="hasAuthority('CREATE')">
+		<a href="createMovie" th:text="#{movieQueries.createMovie}"></a><br/>
+	</div>
+	
+	<div sec:authorize="hasAuthority('DELETE')">
+		<a href="deleteMovie" th:text="#{movieQueries.deleteMovie}"></a><br/>
+	</div>
+	
+	<div sec:authorize="hasAuthority('UPDATE')">
+		<a href="updateMovie" th:text="#{movieQueries.updateMovie}"></a><br/>
+ 	</div>
+ 	
+ 	<br /><br />
+    <div th:replace="fragments/footer::footer"></div>
+ 	
+</body>
+</html>
+

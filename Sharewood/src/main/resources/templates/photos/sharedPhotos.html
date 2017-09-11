@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='sharedPhotos')">
+</head>
+
+<body>
+
+	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{sharedPhotos}"></h1><br /><br />
+    
+    <div th:each="photo : ${photos}"> 
+     	<p th:text="'photo Id: ' + ${photo.id}" /> 
+     	<p th:text="#{photoTitle} + ': ' + ${photo.title}" />
+     	<p><span th:text="#{shared} + ': '"></span><span th:text="${photo.shared}?#{yes}:#{no}"></span></p>      
+    	<img th:src="@{'/photos/doGetPhoto/' + ${photo.id}}" /><br/><br/>       
+    </div>
+    
+    <div th:if="${#lists.isEmpty(photos)}">
+    <p th:text="#{noPhotoFound}"></p>
+    </div>
+
+</body>
+</html>

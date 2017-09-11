@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='Get Actor By Name')">
+</head>
+
+<body>
+
+	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{actorQueries.getActorByName}"></h1><br /><br />
+
+    <form action="#" th:action="@{getActorByName}" th:object="${actorName}" method="post">
+    	<p><span th:text="#{personal.firstName} + ': '"></span><input type="text" th:field="*{firstName}" /><span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:class="errors"></span></p>
+        <p><span th:text="#{personal.lastName} + ': '"></span><input type="text" th:field="*{lastName}" /><span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:class="errors"></span></p>
+        <p><input type="submit" th:value="#{form.valid}" /><input type="reset" th:value="#{form.reset}" /></p>
+    </form>
+</body>
+</html>
+   

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='updatePhoto')">
+</head>
+
+<body>
+
+	<h1 class="display" th:text="'Update Photo'"></h1><br /><br />
+   
+   <div class="display">
+   
+	<form action="#" th:action="@{updatePhoto2}" th:object="${photo}" method="post">
+		<p><span th:text="'Update Photo id: '"></span><input type="text" th:field="*{id}" th:readonly="readonly"/><span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span></p>
+    	<p><span th:text="'Photo title: '"></span><input type="text" th:field="*{title}" /><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" th:class="errors"></span></p>
+        <p><span th:text="'Username: '"></span><input type="text" th:field="*{username}" th:readonly="readonly"/><span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:class="errors"></span></p>
+        <p><span th:text="'Photo shared: '"></span></p>           
+        <p><input type="radio" th:field="*{shared}" th:value="'false'" /><span th:text="'false'"></span></p>
+        <p><input type="radio" th:field="*{shared}" th:value="'true'" /><span th:text="'true'"></span></p>
+       
+        <p><input type="submit" th:value="'Valid'" /> <input type="reset" th:value="'Reset'" /></p>
+	</form>
+
+	<img th:src="@{'/sharewood/photosList/'} + ${photo.id}" /><br/><br/>       
+    
+    </div>
+</body>
+</html>

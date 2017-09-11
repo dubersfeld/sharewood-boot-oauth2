@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='home')">
+</head>
+
+
+<body>
+
+	<br /><br />
+	<h1 class="display">Welcome to Fleetwood</h1><br /><br />
+	
+	<div class="display">
+		<a th:href="@{/sharewood/photosMy}">See my photos on Sharewood</a><br />
+
+		<a th:href="@{/sharewood/sharedPhotos}">See shared photos on Sharewood</a><br />
+
+		<a th:href="@{/sharewood/createPhotoMulti}">Add a new photo to Sharewood</a><br />
+
+		<a th:href="@{/sharewood/updatePhoto}">Update a photo on Sharewood</a><br />
+
+		<a th:href="@{/sharewood/deletePhoto}">Delete a photo from Sharewood</a><br />
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='sharedPhotos')">
+</head>
+
+<body>
+ 
+ 	<a th:href="@{/backHome}" th:text="'home'"></a><br /><br />
+	
+	<h1 th:text="'Shared Photos'"></h1><br /><br />
+ 
+ 	 <br /><br />
+	
+    		
+		<div th:each="photo : ${photos}">
+			
+					
+			<p th:text="${photo.id}"></p>
+			<p th:text="${photo.title}"></p>
+			<p th:text="${photo.shared} ? 'shared' : 'not shared'"></p>
+					                   
+    		<img th:src="@{'/sharewood/photosList/' + ${photo.id}}" th:alt="'No photo found'"/><br/><br/>
+   				<br />
+    			<div th:if="${#lists.isEmpty(photos)}">
+    				<p th:text="'No photo found'"></p>
+    			</div>
+    	</div>
+    		
+</body>
+</html>
+

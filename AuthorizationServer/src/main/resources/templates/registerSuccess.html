@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='registerSuccess')">
+</head>
+
+
+<body>
+
+	<nav th:replace="fragments/main::displayPost"></nav>
+	
+  	<h1 th:text="#{register.success}"></h1>
+         
+</body>
+</html>

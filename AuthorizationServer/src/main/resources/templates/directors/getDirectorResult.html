@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='getDirectorResult')">
+</head>
+
+<body>
+   	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{director.directorData}"></h1><br /><br />
+	
+    <p th:text="#{personal.id} + ': ' + ${director.id}" />
+    <p th:text="#{personal.firstName} + ': ' + ${director.firstName}" />
+    <p th:text="#{personal.lastName} + ': ' + ${director.lastName}" />
+    <p th:text="#{personal.birthDateDisplay} + ': ' + ${#dates.format(director.birthDate, 'dd-MM-yyyy')}" />
+</body>
+</html>

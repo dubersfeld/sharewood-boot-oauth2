@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='getMovies')">
+</head>
+<body>
+
+
+	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{movieResult.getSingleMovie}"></h1><br /><br />
+	
+	<p th:text="#{movie.title} + ': ' + ${movie.title}"></p>
+    <p th:text="#{movie.releaseDateDisplay} + ': ' + ${movie.releaseDate}"></p>
+    <p th:text="#{movie.director} +': ' + ${movie.directorName}"></p>
+                
+    <p th:text="#{movie.runningTime} + ': ' + ${movie.runningTime}"></p> 
+       
+</body>
+</html>
+
+
+   
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='actorResult.getAllPhotosByActor')">
+</head>
+    <body>
+       
+       	<div th:replace="fragments/main::display"></div>
+      
+      	<h1 th:text="#{actorResult.listAllActorsWithPhoto}"></h1><br /><br />
+        
+        <div th:each="actor : ${actors}">
+                <p th:text="#{personal.id} + ': ' + ${actor.id}"></p>
+                <p th:text="#{personal.firstName} + ': ' + ${actor.firstName}"></p>
+                <p th:text="#{personal.lastName} + ': ' + ${actor.lastName}"></p>
+               
+                <p th:text="#{personal.birthDateDisplay} + ': ' +  ${#dates.format(actor.birthDate, 'dd-MM-yyyy')}"></p>
+                    
+                <p th:if="${actor.photoId} > 0" th:text="#{photo.id} + ': ' + ${actor.photoId}"></p>    
+             	<img th:src="@{'/doGetActorPhoto/' + ${actor.photoId}}" th:alt="#{noPhotoFound}"/><br /><br /><br />
+                   
+        </div>
+
+    </body>
+</html>

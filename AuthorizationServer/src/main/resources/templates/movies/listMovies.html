@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='listMovies')">
+</head>
+ <body>
+ 
+ 
+	<div th:replace="fragments/main::display"></div>
+	
+	<h1 th:text="#{title.moviesList}"></h1><br /><br />
+ 
+ 	  <table>
+            <tr>
+                <th th:text="#{movie.id}"></th>
+                <th th:text="#{movie.title}"></th>
+                <th th:text="#{movie.releaseDateDisplay}"></th>
+                <th th:text="#{movie.director}"></th>
+                <th th:text="#{movie.runningTime}"></th>
+            </tr>
+			<tr th:each="movie : ${movies}">
+				<td th:text="${movie.id}"></td>
+                <td th:text="${movie.title}"></td>
+                <td th:text="${movie.releaseDate}"></td>
+                <td th:text="${movie.directorName}"></td>    
+                <td th:text="${movie.runningTime}"></td>        
+        		     
+            </tr>
+              
+	</table>
+
+</body>
+</html>
+

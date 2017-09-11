@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="header(title)">
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />      
+</head>
+<body>
+
+	<nav th:fragment="language">
+		Language:<br/>
+		<a href="?locale=fr_FR">Français</a><br/>
+		<a href="?locale=en_US">English</a>
+		<br/><br/>
+    </nav>
+    
+    <div th:fragment="sator">
+	<h1>sator arrrepo tenet opera rotas</h1>
+
+</div>   
+</body>
+</html>

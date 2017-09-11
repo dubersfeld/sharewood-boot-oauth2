@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="header(title)">
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />      
+</head>
+
+<body>
+
+	<div th:fragment="display">
+		
+		<a th:href="@{/backHome}" th:text="'home'"></a><br /><br />
+	
+	</div>
+	
+	<div class="display" th:fragment="displayPost">
+		
+		<a th:href="@{/backHome}" th:text="'home'"></a><br /><br />
+	
+	</div>
+	
+	
+	
+
+	
+	
+	
+</body>
+</html>

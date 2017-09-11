@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   
+<head th:replace="fragments/header::header(title='updateMovieSuccess')">
+</head>
+<body>
+
+	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{updateMovie.success}"></h1><br /><br />
+	
+    <p th:text="#{movie.id} + ': ' + ${movie.id}" />
+    <p th:text="#{movie.title} + ': ' + ${movie.title}" />
+
+    <p th:text="#{movie.releaseDateDisplay} + ': ' + ${#dates.format(movie.releaseDate, 'dd-MM-yyyy')}" />
+    <p th:text="#{movie.directorId} + ': ' + ${movie.directorId}" />
+    <p th:text="#{movie.runningTime} + ': ' + ${movie.runningTime}" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

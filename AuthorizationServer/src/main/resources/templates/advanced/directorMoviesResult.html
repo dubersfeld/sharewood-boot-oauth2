@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='directorMoviesResult')">
+</head>
+<body>
+
+   	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{advancedResult.directorMovies}"></h1><br />
+	<h2 th:text="${firstName} + ' ' + ${lastName}"></h2>
+	
+	<br/><br/>
+
+	<div th:each="movie : ${movies}">
+    	<p th:text="#{movie.title} + ': ' + ${movie.title}"></p>
+        <p th:text="#{movie.releaseDateDisplay} + ':' + ${#dates.format(movie.releaseDate, 'dd-MM-yyyy')}"></p>
+        <p th:text="#{movie.director} + ': ' + ${movie.directorName}"></p>    
+        <p th:text="#{movie.runningTime} + ':' + ${movie.runningTime}"></p>
+        <br /><br />                        
+    </div>
+
+</body>
+</html>

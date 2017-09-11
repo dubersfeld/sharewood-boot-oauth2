@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='insufficientScope')">
+</head>
+
+<body>
+
+	<div class="display" th:replace="fragments/main::displayPost"></div>
+	
+	<h1 class="display" th:text="'Insufficient Scope: ' + ${required} + ' required'"></h1><br /><br />
+   	<h1 class="display" th:text="'Please Try Again'"></h1><br /><br />
+   	
+</body>
+</html>

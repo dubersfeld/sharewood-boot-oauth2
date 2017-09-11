@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='home')">
+</head>
+
+<body>
+      
+            <span th:text="#{welcome}"></span>
+      
+      
+	<nav th:replace="fragments/header::language"></nav>
+	
+	<div sec:authorize="isAuthenticated()">    
+		<h1>
+			<span th:text="#{welcome} + ' '"></span>
+			<span sec:authentication="name"></span>
+  		</h1>
+  		<br /><br />
+    </div>
+	
+    <div sec:authorize="isAuthenticated()">
+    	<a th:href="@{/logout}" th:text="#{logout}">Sign Out</a>
+    	<br /><br />
+  	</div>
+    
+    <a href="actorQueries" th:text="#{index.basicActorQueries}"></a><br/>
+    
+    <a href="directorQueries" th:text="#{index.basicDirectorQueries}"></a><br/>
+    
+    <a href="movieQueries" th:text="#{index.basicMovieQueries}"></a><br/>
+    
+    <a href="advancedQueries" th:text="#{index.advancedQueries}"></a><br/>
+    
+    
+    <br /><br />
+    <div th:replace="fragments/footer::footer"></div>
+    
+    
+    
+    
+</body>
+</html>

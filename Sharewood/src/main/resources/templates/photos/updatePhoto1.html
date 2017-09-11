@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments/header::header(title='updatePhoto')">
+</head>
+
+<body>
+
+	<h1 th:text="#{updatePhoto}"></h1><br /><br />
+	
+	<div th:replace="fragments/main::displayPost"></div>
+	
+    <form action="#" th:action="@{updatePhoto1}" th:object="${getPhoto}" method="post">
+    	<p><span th:text="'photo id: '"></span><input type="text" th:field="*{id}" /><span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" th:class="errors"></span></p>
+        <p><input type="submit" th:value="#{form.valid}" /> <input type="reset" th:value="#{form.reset}" /></p>
+    </form>
+
+
+</body>
+</html>
+    
+    

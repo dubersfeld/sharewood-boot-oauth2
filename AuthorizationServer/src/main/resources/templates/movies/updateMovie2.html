@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='updateMovie')">
+</head>
+<body>
+
+	<div th:replace="fragments/main::displayPost"></div>
+
+	<h1 th:text="#{movieQueries.updateMovie}"></h1><br /><br />
+	
+	<div th:with="enclume=${#dates.format(movie.releaseDate, 'yyyy-MM-dd')}">
+        
+                 
+	<form action="#" th:action="@{updateMovie2}" th:object="${movie}" method="post">
+		<p><span th:text="#{movie.id} + ': '"></span><input type="text" th:field="*{id}" th:readonly="readonly"/><span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span></p>
+    	<p><span th:text="#{movie.title} + ': '"></span><input type="text" th:field="*{title}" th:readonly="readonly"/><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span></p>
+        <p><span th:text="#{movie.releaseDate} + ': '"></span><input type="date" th:id="releaseDate" th:name="releaseDate" th:value="${enclume}" th:readonly="readonly"/><span th:if="${#fields.hasErrors('releaseDate')}" th:errors="*{birthDate}"></span></p>
+        <p><span th:text="#{movie.director} + ': '"></span><input type="text" th:field="*{directorId}" /><span th:if="${#fields.hasErrors('directorId')}" th:errors="*{directorId}" th:class="errors"></span></p>
+        <p><span th:text="#{movie.runningTime} + ': '"></span><input type="text" th:field="*{runningTime}" /><span th:if="${#fields.hasErrors('runningTime')}" th:errors="*{runningTime}" th:class="errors"></span></p>
+       
+        <p><input type="submit" th:value="#{form.valid}" /> <input type="reset" th:value="#{form.reset}" /></p>
+	</form>
+    	
+    	</div>
+</body>
+</html>
+   
+
+
+
+
+
+
+
+
+

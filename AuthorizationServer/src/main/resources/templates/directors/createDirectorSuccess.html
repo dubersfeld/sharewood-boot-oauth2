@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header(title='createDirectorSuccess')">
+</head>  
+<body>
+	
+	<div th:replace="fragments/main::displayPost"></div>
+	
+	<h1 th:text="#{createDirector.success}"></h1><br /><br />
+	
+    <p th:text="'id: ' + ${director.id}" />
+    <p th:text="'first name: ' + ${director.firstName}" />
+    <p th:text="'last name: ' + ${director.lastName}" />
+    <p th:text="'birth date: ' + ${#dates.format(director.birthDate, 'dd-MM-yyyy')}" />
+</body>
+</html>

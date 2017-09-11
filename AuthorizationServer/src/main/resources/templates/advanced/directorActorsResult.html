@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header::header(title='directorActors')">
+</head>
+<body>
+
+   	<div th:replace="fragments/main::displayPost"></div>
+
+	<h1 th:text="#{advancedResult.directorActors}"></h1><br />
+	
+	<h2 th:text="${firstName} + ' ' + ${lastName}"></h2><br />
+	
+	<br/><br/>
+
+	<div th:each="actor : ${actors}">
+		<p th:text="${actor.firstName} + ' ' + ${actor.lastName}"></p>
+                              
+    </div>
+	
+
+</body>
+</html>
