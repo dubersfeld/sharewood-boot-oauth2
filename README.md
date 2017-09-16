@@ -39,6 +39,10 @@ server.port=8081
 server.context-path=/sharewood
 spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
+# override default upload file max size 1MB
+spring.http.multipart.max-file-size=10MB
+spring.http.multipart.max-request-size=10MB
+
 security.oauth2.resource.id=SHAREWOOD
 
 # server temporary directory
