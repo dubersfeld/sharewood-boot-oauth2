@@ -71,6 +71,9 @@ tempDir=/home/dominique/Pictures/client/tmp/
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
 
 
+For a microservice-oriented version see this repository:
+
+https://github.com/dubersfeld/sharewood-reloaded
 
 
 
