@@ -19,6 +19,7 @@ Here are the application properties used to set most deployment variables:
 
 AuthorizationServer
 
+```
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/transitSharewoodDB
 spring.datasource.username=tomcatUser
@@ -27,9 +28,10 @@ spring.datasource.password=password1234
 server.port=8080
 server.context-path=/authorization
 spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+```
 
 Sharewood
-
+```
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/transitSharewoodDB
 spring.datasource.username=tomcatUser
@@ -47,9 +49,10 @@ security.oauth2.resource.id=SHAREWOOD
 
 #server temporary directory
 photos.baseDirPath=/home/dominique/workspace-resource-boot/photos/
+```
 
 Fleetwood
-
+```
 server.port=9090
 server.context-path=/fleetwood
 
@@ -68,7 +71,6 @@ sharewoodPhotoBaseURL=http://localhost:8081/sharewood/api/photos
 tempDir=/home/dominique/Pictures/client/tmp/
 
 #logging pattern for the console
-```
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
 ```
 
