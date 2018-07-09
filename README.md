@@ -71,7 +71,11 @@ tempDir=/home/dominique/Pictures/client/tmp/
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
 
 
-For a microservice-oriented version see this repository:
+For a version upgraded to SpringBoot 2.0.3 follow this link:
+
+https://github.com/dubersfeld/sharewood-oauth2-upgrade
+
+For a microservice-oriented version follow this link:
 
 https://github.com/dubersfeld/sharewood-reloaded
 
