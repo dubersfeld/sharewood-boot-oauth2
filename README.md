@@ -39,13 +39,13 @@ server.port=8081
 server.context-path=/sharewood
 spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
-### override default upload file max size 1MB
+#override default upload file max size 1MB
 spring.http.multipart.max-file-size=10MB
 spring.http.multipart.max-request-size=10MB
 
 security.oauth2.resource.id=SHAREWOOD
 
-### server temporary directory
+#server temporary directory
 photos.baseDirPath=/home/dominique/workspace-resource-boot/photos/
 
 Fleetwood
@@ -56,18 +56,18 @@ server.context-path=/fleetwood
 security.oauth2.client.client-id=Fleetwood
 security.oauth2.client.client-secret=y471l12D2y55U5558rd2
 
-### authorization server
+#authorization server
 accessTokenUri=http://localhost:8080/authorization/oauth/token
 userAuthorizationUri=http://localhost:8080/authorization/oauth/authorize
 
-### resource server
+#resource server
 producerBaseURL=http://localhost:8081/sharewood/api/
 sharewoodPhotoBaseURL=http://localhost:8081/sharewood/api/photos
 
-### client temporary directory
+#client temporary directory
 tempDir=/home/dominique/Pictures/client/tmp/
 
-#Logging pattern for the console
+#logging pattern for the console
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
 
 
@@ -78,9 +78,4 @@ https://github.com/dubersfeld/sharewood-oauth2-upgrade
 For a microservice-oriented version follow this link:
 
 https://github.com/dubersfeld/sharewood-reloaded
-
-
-
-
-
 
