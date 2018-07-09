@@ -68,8 +68,9 @@ sharewoodPhotoBaseURL=http://localhost:8081/sharewood/api/photos
 tempDir=/home/dominique/Pictures/client/tmp/
 
 #logging pattern for the console
+```
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
-
+```
 
 For a version upgraded to SpringBoot 2.0.3 follow this link:
 
