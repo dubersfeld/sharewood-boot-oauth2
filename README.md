@@ -67,7 +67,7 @@ sharewoodPhotoBaseURL=http://localhost:8081/sharewood/api/photos
 ### client temporary directory
 tempDir=/home/dominique/Pictures/client/tmp/
 
-### Logging pattern for the console
+#Logging pattern for the console
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
 
 
