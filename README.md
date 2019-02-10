@@ -82,3 +82,7 @@ For a microservice-oriented version follow this link:
 
 https://github.com/dubersfeld/sharewood-reloaded
 
+For a microservice-oriented version running in Docker containers follow this link:
+
+https://github.com/dubersfeld/sharewood-limehouse
+
